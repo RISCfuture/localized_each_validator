@@ -1,7 +1,7 @@
 h1. Localized @EachValidator@
 
 | *Author* | Tim Morgan |
-| *Version* | 1.0 (Oct 31, 2010) |
+| *Version* | 1.0.1 (Oct 31, 2010) |
 | *License* | Released under the MIT license. |
 
 h2. About
