@@ -6,11 +6,15 @@ h1. Localized @EachValidator@
 
 h2. About
 
-Localized @EachValidator@ is a subclass of ActiveRecord's @EachValidator@ that makes it easier to write a localized validator with Rails 3's localization. It's small and simple.
+Localized @EachValidator@ is a subclass of ActiveRecord's @EachValidator@ that
+makes it easier to write a localized validator with Rails 3's localization. It's
+small and simple.
 
 h2. Usage
 
-Add this gem to your project's @Gemfile@, or to your own validator gem's dependencies. Then, sublass @LocalizedEachValidator@ and provide the @error_key@ and override the @valid?@ method, like so:
+Add this gem to your project's @Gemfile@, or to your own validator gem's
+dependencies. Then, sublass @LocalizedEachValidator@ and provide the @error_key@
+and override the @valid?@ method, like so:
 
 <pre><code>
 class FourValidator < ActiveRecord::EachValidator
