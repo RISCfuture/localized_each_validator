@@ -1,13 +1,11 @@
 source :rubygems
 
-# DEPENDENCIES
 gem 'activerecord', require: 'active_record'
 gem 'activesupport', require: 'active_record'
 
-# DEVELOPMENT
-gem 'jeweler'
-gem 'yard'
-gem 'RedCloth', require: 'redcloth'
-
-# TEST
-gem 'rspec'
+group :development do
+  gem 'jeweler'
+  gem 'yard'
+  gem 'RedCloth', require: 'redcloth'
+  gem 'rspec'
+end
