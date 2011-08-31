@@ -17,6 +17,7 @@ Jeweler::Tasks.new do |gem|
   gem.email = "git@timothymorgan.info"
   gem.homepage = "http://github.com/riscfuture/localized_each_validator"
   gem.authors = [ "Tim Morgan" ]
+  gem.files = %w( lib/**/* localized_each_validator.gemspec README.textile LICENSE )
 end
 Jeweler::RubygemsDotOrgTasks.new
 
@@ -29,7 +30,7 @@ YARD::Rake::YardocTask.new('doc') do |doc|
   doc.options << "--protected"
   doc.options << "-r" << "README.textile"
   doc.options << "-o" << "doc"
-  doc.options << "--title" << "Localized EachValidator Documentation".inspect
+  doc.options << "--title" << "Localized EachValidator Documentation"
   
   doc.files = [ 'lib/**/*', 'README.textile' ]
 end
