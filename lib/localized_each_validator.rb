@@ -17,8 +17,6 @@ require 'active_record'
 # @abstract Subclass this validator to perform your specific validations.
 
 class LocalizedEachValidator < ActiveModel::EachValidator
-  extend ActiveSupport::Memoizable
-
   # @private
   def validate_each(record, attribute, value)
     return if options[:allow_nil] and value.nil?
