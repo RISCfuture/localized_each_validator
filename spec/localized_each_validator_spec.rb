@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'active_model'
 
 module SpecSupport
   class TestLocalizedEachValidator < LocalizedEachValidator

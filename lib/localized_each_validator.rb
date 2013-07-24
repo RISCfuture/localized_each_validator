@@ -1,5 +1,5 @@
 require 'active_support/core_ext/hash/except'
-require 'active_record'
+require 'active_model/validator'
 
 # An @EachValidator@ that uses the translation table to build its error
 # messages. Override the {#valid?} method to describe your validation
