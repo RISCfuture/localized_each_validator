@@ -1,17 +1,17 @@
 require 'active_support/core_ext/hash/except'
 require 'active_model/validator'
 
-# An @EachValidator@ that uses the translation table to build its error
+# An `EachValidator` that uses the translation table to build its error
 # messages. Override the {#valid?} method to describe your validation
 # conditions of your subclasses.
 #
 # The error message translation lookups conform to the standard hierarchy of
 # internationalization keys as described by the
-# @ActiveRecord::Errors#generate_message@ method. (See its documentation for
+# `ActiveRecord::Errors#generate_message` method. (See its documentation for
 # more information.) The last portion of the translation key path is the error
 # message key, and by default it is the name of the validator class (excepting
 # "Validator"), underscored and demodulized. For example, an
-# @EmailAddressValidator@ subclass would use the @email_address@ key within the
+# `EmailAddressValidator` subclass would use the `email_address` key within the
 # normal ActiveRecord error key structure.
 #
 # @abstract Subclass this validator to perform your specific validations.
@@ -27,7 +27,7 @@ class LocalizedEachValidator < ActiveModel::EachValidator
   protected
 
   # @abstract Override this method to return true or false depending on whether
-  # @value@ is a valid value for @record@'s @attribute@.
+  #   `value` is a valid value for `record`'s `attribute`.
   # @param [ActiveRecord::Base] record The record being validated.
   # @param [Symbol] attribute The attribute with the given value.
   # @param value The value of the attribute to be validated.
