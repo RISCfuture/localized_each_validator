@@ -19,22 +19,10 @@ require 'active_model/validator'
 class LocalizedEachValidator < ActiveModel::EachValidator
   # @private
   def validate_each(record, attribute, value)
-    return if options[:allow_nil] and value.nil?
-    return if options[:allow_blank] and value.blank?
+    return if options[:allow_nil] && value.nil?
+    return if options[:allow_blank] && value.blank?
+
     record.errors.add(attribute, options[:message] || self.class.error_key) unless valid?(record, attribute, value)
-  end
-
-  protected
-
-  # @abstract Override this method to return true or false depending on whether
-  #   `value` is a valid value for `record`'s `attribute`.
-  # @param [ActiveRecord::Base] record The record being validated.
-  # @param [Symbol] attribute The attribute with the given value.
-  # @param value The value of the attribute to be validated.
-  # @return [true, false] Whether the value is valid.
-
-  def valid?(record, attribute, value)
-    raise NotImplementedError, "Implement this method in your subclasses"
   end
 
   # @overload error_key
@@ -46,10 +34,23 @@ class LocalizedEachValidator < ActiveModel::EachValidator
   #   @param [Symbol] value The new error message key.
 
   def self.error_key(value=nil)
-    if value then
+    if value
       @error_key = value
     else
       return @error_key || to_s.demodulize.sub(/Validator$/, '').underscore.to_sym
     end
+  end
+
+  protected
+
+  # @abstract Override this method to return true or false depending on whether
+  #   `value` is a valid value for `record`'s `attribute`.
+  # @param [ActiveRecord::Base] record The record being validated.
+  # @param [Symbol] attribute The attribute with the given value.
+  # @param value The value of the attribute to be validated.
+  # @return [true, false] Whether the value is valid.
+
+  def valid?(_record, _attribute, _value)
+    raise NotImplementedError, "Implement this method in your subclasses"
   end
 end

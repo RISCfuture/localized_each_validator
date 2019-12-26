@@ -3,8 +3,8 @@ require 'bundler'
 begin
   Bundler.setup(:default, :development)
 rescue Bundler::BundlerError => e
-  $stderr.puts e.message
-  $stderr.puts "Run `bundle install` to install missing gems"
+  warn e.message
+  warn "Run `bundle install` to install missing gems"
   exit e.status_code
 end
 require 'rake'
@@ -17,7 +17,7 @@ Jeweler::Tasks.new do |gem|
   gem.email       = 'git@timothymorgan.info'
   gem.homepage    = 'http://github.com/riscfuture/localized_each_validator'
   gem.authors     = ['Tim Morgan']
-  gem.files       = %w( lib/**/* localized_each_validator.gemspec README.md LICENSE )
+  gem.files       = %w[lib/**/* localized_each_validator.gemspec README.md LICENSE]
 end
 Jeweler::RubygemsDotOrgTasks.new
 
@@ -41,7 +41,7 @@ YARD::Rake::YardocTask.new('doc') do |doc|
   doc.options << '-o' << 'doc'
   doc.options << '--title' << "Localized EachValidator Documentation"
 
-  doc.files = %w(lib/**/* README.md)
+  doc.files = %w[lib/**/* README.md]
 end
 
 task(default: :spec)

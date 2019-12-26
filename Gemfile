@@ -5,7 +5,7 @@ gem 'activesupport', '>= 3.0'
 
 group :development do
   gem 'jeweler'
-  gem 'yard'
   gem 'redcarpet', require: nil
   gem 'rspec'
+  gem 'yard'
 end
