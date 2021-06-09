@@ -5,6 +5,7 @@ module SpecSupport
   class TestLocalizedEachValidator < LocalizedEachValidator
     def valid?(_, _, v) v == 'foo' end
   end
+
   class FakeModel
     extend ActiveModel::Translation
     extend ActiveModel::Naming
