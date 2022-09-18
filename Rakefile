@@ -17,7 +17,7 @@ Jeweler::Tasks.new do |gem|
   gem.email       = 'git@timothymorgan.info'
   gem.homepage    = 'http://github.com/riscfuture/localized_each_validator'
   gem.authors     = ['Tim Morgan']
-  gem.files       = %w( lib/**/* localized_each_validator.gemspec README.textile LICENSE )
+  gem.files       = %w( lib/**/* localized_each_validator.gemspec README.md LICENSE )
 end
 Jeweler::RubygemsDotOrgTasks.new
 
@@ -25,14 +25,23 @@ require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new
 
 require 'yard'
+
+# bring sexy back (sexy == tables)
+module YARD::Templates::Helpers::HtmlHelper
+  def html_markup_markdown(text)
+    markup_class(:markdown).new(text, :gh_blockcode, :fenced_code, :autolink, :tables, :no_intraemphasis).to_html
+  end
+end
+
 YARD::Rake::YardocTask.new('doc') do |doc|
-  doc.options << '-m' << 'textile'
-  doc.options << '--protected'
-  doc.options << '-r' << 'README.textile'
+  doc.options << '-m' << 'markdown'
+  doc.options << '-M' << 'redcarpet'
+  doc.options << '--protected' << '--no-private'
+  doc.options << '-r' << 'README.md'
   doc.options << '-o' << 'doc'
   doc.options << '--title' << "Localized EachValidator Documentation"
 
-  doc.files = %w(lib/**/* README.textile)
+  doc.files = %w(lib/**/* README.md)
 end
 
 task(default: :spec)
