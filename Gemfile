@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'activerecord', require: 'active_record'
-gem 'activesupport', require: 'active_record'
+gem 'activemodel', '>= 3.0'
+gem 'activesupport', '>= 3.0'
 
 group :development do
   gem 'jeweler'
