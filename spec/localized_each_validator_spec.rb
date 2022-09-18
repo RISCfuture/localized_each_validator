@@ -3,13 +3,13 @@ require 'active_model'
 
 module SpecSupport
   class TestLocalizedEachValidator < LocalizedEachValidator
-    def valid?(_,_, v) v == 'foo' end
+    def valid?(_, _, v) v == 'foo' end
   end
   class FakeModel
     extend ActiveModel::Translation
     extend ActiveModel::Naming
     def errors() @errors ||= ActiveModel::Errors.new(self) end
-    def self.lookup_ancestors() [ self ] end
+    def self.lookup_ancestors() [self] end
     def read_attribute_for_validation(_) "mock" end
   end
 end
@@ -21,12 +21,12 @@ RSpec.describe LocalizedEachValidator do
 
   describe ".error_key_prefix" do
     it "should be the downcased name of the validator by default" do
-      expect(SpecSupport::TestLocalizedEachValidator.error_key).to eql(:test_localized_each)
+      expect(SpecSupport::TestLocalizedEachValidator.error_key).to be(:test_localized_each)
     end
 
     it "should be able to be set" do
       SpecSupport::TestLocalizedEachValidator.error_key(:foo)
-      expect(SpecSupport::TestLocalizedEachValidator.error_key).to eql(:foo)
+      expect(SpecSupport::TestLocalizedEachValidator.error_key).to be(:foo)
       SpecSupport::TestLocalizedEachValidator.instance_variable_set :@error_key, nil
     end
   end
