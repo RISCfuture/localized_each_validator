@@ -15,7 +15,7 @@ Jeweler::Tasks.new do |gem|
   gem.summary     = "Simple EachValidator with localization support"
   gem.description = "Adds an abstract EachValidator superclass that you can use to create localizable validations."
   gem.email       = 'git@timothymorgan.info'
-  gem.homepage    = 'http://github.com/riscfuture/localized_each_validator'
+  gem.homepage    = 'https://github.com/riscfuture/localized_each_validator'
   gem.authors     = ['Tim Morgan']
   gem.files       = %w[lib/**/* localized_each_validator.gemspec README.md LICENSE]
 end
