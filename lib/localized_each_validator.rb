@@ -1,5 +1,7 @@
-require 'active_support/core_ext/hash/except'
-require 'active_model/validator'
+# frozen_string_literal: true
+
+require "active_support/core_ext/hash/except"
+require "active_model/validator"
 
 # An `EachValidator` that uses the translation table to build its error
 # messages. Override the {#valid?} method to describe your validation
@@ -34,11 +36,9 @@ class LocalizedEachValidator < ActiveModel::EachValidator
   #   @param [Symbol] value The new error message key.
 
   def self.error_key(value=nil)
-    if value
-      @error_key = value
-    else
-      return @error_key || to_s.demodulize.sub(/Validator$/, '').underscore.to_sym
-    end
+    return @error_key || to_s.demodulize.sub(/Validator$/, "").underscore.to_sym unless value
+
+    @error_key = value
   end
 
   protected
