@@ -2,6 +2,7 @@
 
 require "spec_helper"
 require "active_model"
+require "active_support/core_ext/string/filters"
 
 module SpecSupport
   class TestLocalizedEachValidator < LocalizedEachValidator
