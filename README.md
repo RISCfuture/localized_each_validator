@@ -1,5 +1,9 @@
 # Localized `EachValidator`
 
+[![CI](https://github.com/RISCfuture/localized_each_validator/actions/workflows/ruby.yml/badge.svg)](https://github.com/RISCfuture/localized_each_validator/actions/workflows/ruby.yml)
+[![Gem Version](https://img.shields.io/gem/v/localized_each_validator.svg)](https://rubygems.org/gems/localized_each_validator)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 |             |                                 |
 | :---------- | :------------------------------ |
 | **Author**  | Tim Morgan                      |
