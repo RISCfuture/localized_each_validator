@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "bundler/setup"
+require "localized_each_validator"
+
+# You can add fixtures and/or initialization code here to make experimenting
+# with your gem easier. You can then also use this file as a script to test
+# your gem (for example: `bin/console`).
+
+require "irb"
+IRB.start(__FILE__)

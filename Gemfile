@@ -2,13 +2,10 @@
 
 source "https://rubygems.org"
 
-gem "activemodel", ">= 3.0"
-gem "activesupport", ">= 3.0"
+# Specify your gem's dependencies in localized_each_validator.gemspec
+gemspec
 
-group :development do
-  gem "jeweler"
-  gem "psych", "< 4.0" # jeweler incompatibility
-  gem "redcarpet", require: nil
-  gem "rspec"
-  gem "yard"
+# Allow CI to pin a specific ActiveModel minor series (e.g. "7.1", "8.0").
+if (activemodel_version = ENV["ACTIVEMODEL_VERSION"])
+  gem "activemodel", "~> #{activemodel_version}.0"
 end

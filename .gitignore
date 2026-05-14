@@ -1,25 +1,27 @@
-## MAC OS
+## macOS
 .DS_Store
 
-## TEXTMATE
-*.tmproj
-tmtags
-
-## EMACS
+## Editors
 *~
 \#*
 .\#*
-
-## VIM
 *.swp
+.idea/
 
-## PROJECT::GENERAL
-coverage
-rdoc
-pkg
-.bundle
-.rvmrc
+## Bundler / RubyGems
+.bundle/
+vendor/bundle/
+pkg/
+*.gem
 
-## PROJECT::DOCUMENTATION
-.yardoc
-doc
+## RSpec
+spec/examples.txt
+
+## YARD / RDoc
+.yardoc/
+doc/
+rdoc/
+
+## Coverage
+coverage/
+.claude/

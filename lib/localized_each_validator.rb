@@ -2,6 +2,7 @@
 
 require "active_support/core_ext/hash/except"
 require "active_model/validator"
+require "localized_each_validator/version"
 
 # An `EachValidator` that uses the translation table to build its error
 # messages. Override the {#valid?} method to describe your validation
