@@ -1,27 +1,17 @@
-## macOS
-.DS_Store
-
-## Editors
-*~
-\#*
-.\#*
-*.swp
-.idea/
-
-## Bundler / RubyGems
-.bundle/
-vendor/bundle/
-pkg/
+# Ruby gem
+/.bundle/
+/.yardoc/
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/spec/examples.txt
+/tmp/
 *.gem
 
-## RSpec
-spec/examples.txt
+# Vendored bundle
+vendor/bundle/
 
-## YARD / RDoc
-.yardoc/
-doc/
+# RDoc
 rdoc/
-
-## Coverage
-coverage/
-.claude/
