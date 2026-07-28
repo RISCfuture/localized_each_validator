@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
 
   spec.metadata = {
     "homepage_uri"          => spec.homepage,
+    "documentation_uri"     => "https://riscfuture.github.io/localized_each_validator/",
     "source_code_uri"       => "https://github.com/RISCfuture/localized_each_validator/tree/master",
     "changelog_uri"         => "https://github.com/RISCfuture/localized_each_validator/blob/master/CHANGELOG.md",
     "bug_tracker_uri"       => "https://github.com/RISCfuture/localized_each_validator/issues",
